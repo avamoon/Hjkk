@@ -1,0 +1,17 @@
+```html
+<a href="https://is.gd/cristyinvitation2" target="_blank" onclick="openInChrome(event)">Open Link in Google Chrome</a>
+
+<script>
+function openInChrome(event) {
+  event.preventDefault(); // Prevents default browser behavior of opening link in default browser
+
+  var url = event.currentTarget.getAttribute("href");
+
+  if (navigator.userAgent.indexOf("Chrome") != -1 || navigator.userAgent.indexOf("CriOS") != -1) {
+    window.open(url);
+  } else {
+    // Provide fallback for non-Chrome browsers or if Chrome is not present
+    alert("Please open this link in Google Chrome.");
+  }
+}
+</script>
